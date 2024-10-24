@@ -1,6 +1,4 @@
-from classes.item import item
-
-class equipment(item):
+class equipment:
     __helmet = None
     __chestplate = None
     __leggings = None
@@ -10,8 +8,7 @@ class equipment(item):
     __mainHold = None
     __secondHold = None
     
-    def __init__(self,name, weight, stats, helmet,chestplate,leggings,boots,ring1,ring2,mainHold,secondHold):
-        super.__init__(name, weight, stats)
+    def __init__(self,helmet,chestplate,leggings,boots,ring1,ring2,mainHold,secondHold):
         self.__helmet = helmet
         self.__chestplate = chestplate
         self.__leggings = leggings
@@ -22,22 +19,21 @@ class equipment(item):
         self.__secondHold = secondHold
         
     def getHelemet(self):
-        return self.__helmet
+        return self.helmet
     def getChestplate(self):
-        return self.__chestplate
+        return self.chestplate
     def getLeggings(self):
-        return self.__leggings
+        return self.leggings
     def getBoots(self):
-        return self.__boots
+        return self.boots
     def getRing1(self):
-        return self.__ring1
+        return self.ring1
     def getRing2(self):
-        return self.__ring2
+        return self.ring2
     def getMainHold(self):
-        return self.__mainHold
+        return self.mainHold
     def getSecondHold(self):
-        return self.__secondHold
+        return self.secondHold
     
         
         
-

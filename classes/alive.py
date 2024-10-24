@@ -1,6 +1,6 @@
-from hstatistic import statistic
-from race import race
-from role import role
+from classes.hstatistic import statistic
+from classes.race import race
+from classes.role import role
 class alive:
     __name = None
     __statistic = None

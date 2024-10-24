@@ -1,4 +1,4 @@
-class inventory:
+class Inventory:
     __maxWeight = None
     __weight = None
     __dicObject = None

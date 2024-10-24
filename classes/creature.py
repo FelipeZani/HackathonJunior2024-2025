@@ -1,4 +1,4 @@
-from alive import alive
+from classes.alive import alive
 
 class creature(alive):
     

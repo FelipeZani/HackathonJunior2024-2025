@@ -18,19 +18,19 @@ class statistic:
         self.__crit = crit
         self.__critModifier = critModifier
 
-        def getHealth(health):
+        def getHealth(self):
             return self.__health
-        def getMana(mana):
+        def getMana(self):
             return self.__mana
-        def getAttack(attack):
+        def getAttack(self):
             return self.__attack
-        def getDefense(defense):
+        def getDefense(self):
             return self.__defense
-        def getElement(element):
+        def getElement(self):
             return self.__element
-        def getRacism(racism):
+        def getRacism(self):
             return self.__racism
-        def getCrit(crit):
+        def getCrit(self):
             return self.__crit
-        def getCritModifier(critModifier):
+        def getCritModifier(self):
             return self.__critModifier        

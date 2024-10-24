@@ -1,4 +1,4 @@
-from building import building
+from classes.building import building
 
 class chest(building):
 
