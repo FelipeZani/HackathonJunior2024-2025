@@ -1,7 +1,7 @@
-from hstatistic import Statistic
-from race import Race
-from role import Role
-class Alive:
+from hstatistic import statistic
+from race import race
+from role import role
+class alive:
     __name = None
     __statistic = None
     __race = None
