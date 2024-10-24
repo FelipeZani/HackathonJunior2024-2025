@@ -1,11 +1,11 @@
-class chest:
-    __name = None
+from building import building
+
+class chest(building):
+
     __inventory = None
-    def __init__(self,name,inventory):
-        self.__name = name
+    def __init__(self,name,architecture,owner,inventory):
+        super.__init__(name,architecture,owner)
         self.__inventory = inventory
 
-    def getName(self):
-        return self.__name
     def getInventory(self):
         return self.__inventory
