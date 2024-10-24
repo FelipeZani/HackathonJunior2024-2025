@@ -32,5 +32,5 @@ class Statistic:
             return self.__racism
         def getCrit(crit):
             return self.__crit
-        def CritModifier(critModifier):
+        def getCritModifier(critModifier):
             return self.__critModifier        
