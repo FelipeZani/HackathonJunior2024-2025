@@ -1,6 +1,6 @@
-from hstatistic import Statistic
+from hstatistic import statistic
 
-class Role:
+class role:
     __nom = None
     __type = None
     __stats = None
