@@ -30,6 +30,13 @@ def createStat():
     
     return s
 
+def createBuilding():
+    name = input("Choose the name of the building")
+    architecture = input("Choose the architecture of the building")
+    owner = input("Choose the name of the owner of the building")
+    build = building(name,architecture,owner)
+    return build
+
 def main():
     s = createStat()
     Ls = [s.getHealth(),s.getMana(),s.getAttack(),s.getDefense(),s.getElement(),s.getRacism(),s.getCrit(),s.getCritModifier()]
