@@ -1,4 +1,4 @@
-class Statistic:
+class statistic:
     __health = None
     __mana = None
     __attack= None
