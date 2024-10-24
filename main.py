@@ -29,6 +29,20 @@ def createAliveStat():
     s = statistic(health,mana,attack,defense,element,racism,crit,critModifier)
     
     return s
+     
+def createItemStat():
+     
+    health = int(input("Choose the Health bonus from 0 to 999 999 999: "))
+    mana = int(input("Choose the Mana bonus from 0 to 255 :"))
+    attack= int(input("Choose the Attack bonus 0 to 255 : "))
+    defense = int(input("Choose the Defense bonus from 0 to 255 : "))
+    element = 0
+    racism = 0
+    crit = float(input("Choose the probability of crit attack bonus from 0 to 1 : "))
+    critModifier = int(input("Choose the multiplier of a crit attack bonus from 0 to 1000 : "))
+    assert (0<=health<=999_999_999) and (0<=mana<=255) and (0<=attack<=255) and (0<=defense<=255) and (0<=racism<=999_999_999 )and (0<=crit<=1) and (0<=critModifier<=1000), 'Respect  the min and max amount for each stat'
+    i = statistic(health,mana,attack,defense,element,racism,crit,critModifier)
+    return i 
 
 def statValues(stat):
     return [stat.getHealth(),stat.getMana(),stat.getAttack(),stat.getDefense(),stat.getElement(),stat.getRacism(),stat.getCrit(),stat.getCritModifier()]
@@ -53,6 +67,18 @@ def createRace():
 
 def RaceValues(race):
     return [race.getName(),race.getOrigine(),race.getReputation(),statValues(race.getModif())]
+
+def creatItem():
+    name = input("Choose the name of your Item : ")
+    weight = input("Choose your Item's weight : ")
+    stats = createItemStat()
+    
+    i= item(name,weight,stats)
+
+    return i
+
+def itemValues(item):
+     return [item.getName(),item.getWeight(),statValues(item.getStats())]
 
 def main():
     s = createStat()
