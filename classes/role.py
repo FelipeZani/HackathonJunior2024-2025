@@ -1,4 +1,4 @@
-from hstatistics import Statistic
+from hstatistic import Statistic
 
 class Role:
     __nom = None
