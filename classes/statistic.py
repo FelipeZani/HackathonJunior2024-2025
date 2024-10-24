@@ -8,7 +8,7 @@ class Statistic:
     __crit = None
     __critModifier = None
 
-    def __init(self, health, mana, attack, defense, element, racism, crit, critModifier):
+    def __init__(self, health, mana, attack, defense, element, racism, crit, critModifier):
         self.__health = health
         self.__mana = mana
         self.__attack = attack
