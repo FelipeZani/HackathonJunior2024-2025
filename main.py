@@ -1,3 +1,4 @@
+import sys
 from classes.alive import alive
 from classes.equipment import equipment
 from classes.building import building
@@ -14,6 +15,42 @@ from classes.npc import npc
 from classes.region import region
 from classes.creature import creature
 from classes.consumable import consumable
+
+def createRegion():
+
+    regionCoordinateX = input("Choose intenger numbers to be the coordinates of your region, the form is a square of edge x: ") # coordinate to add onto the canvas
+        
+    try: 
+        regionCoordinateX = int(regionCoordinateX)  
+    except:
+        print("Invalid values, stop program")
+        sys.exit(1) #exiting program in case of error 
+    
+    #add security on the edge's canvas
+
+    topography = input("Choose the topography of your region: 1- forest 2-swamp 3- mountains 4- desert: ")
+
+    try:
+        topography = int(topography)
+    except:
+        print("Invalid value, stop program")
+        sys.exit(1) #exiting program in case of error 
+
+    assert 1 <= topography <= 4 , "Value out of range"
+
+    constructionLM = input("Choice of landMark: 1- City 2- Dungeon 3- Tower 4-Keeps 5-Villages: ")
+    
+    try:
+        constructionLM = int(constructionLM)
+    except:
+        print("Invalid values, stop program")
+        sys.exit(1) #exiting program in case of error 
+
+    assert 1 <= constructionLM <= 5 , "Value out of range"
+
+
+    return region(topography,regionCoordinateX,constructionLM)
+
 
 def createAliveStat():
      
