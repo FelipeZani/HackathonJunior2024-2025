@@ -15,7 +15,7 @@ from classes.region import region
 from classes.creature import creature
 from classes.consumable import consumable
 
-def createStat():
+def createAliveStat():
      
     health = int(input("Choose the amount of Health from 1 to 999 999 999: "))
     mana = int(input("Choose the amount of Mana from 1 to 255 :"))
@@ -30,12 +30,29 @@ def createStat():
     
     return s
 
+def statValues(stat):
+    return [stat.getHealth(),stat.getMana(),stat.getAttack(),stat.getDefense(),stat.getElement(),stat.getRacism(),stat.getCrit(),stat.getCritModifier()]
+
 def createBuilding():
     name = input("Choose the name of the building")
     architecture = input("Choose the architecture of the building")
     owner = input("Choose the name of the owner of the building")
     build = building(name,architecture,owner)
     return build
+
+def buildingValues(build):
+    return [build.getName(),build.getArchitecture(),build.getOwner()]
+
+def createRace():
+    name = str(input('Choose the name of the race : '))
+    origine = 'EMPTYY'
+    reputaion = int(input('Choose the reputation of the race from 1 to 255, (1 means bad reputation, 255 means good reputation): '))
+    modif = createStat()
+    r = race(name,origine,reputaion,modif)
+    return r
+
+def RaceValues(race):
+    return [race.getName(),race.getOrigine(),race.getReputation(),statValues(race.getModif())]
 
 def main():
     s = createStat()
