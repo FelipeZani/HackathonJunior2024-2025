@@ -1,3 +1,4 @@
+from hstatistic import Statistic
 class Alive:
     __name = None
     __statistic = None
