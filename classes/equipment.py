@@ -1,4 +1,4 @@
-from item import item
+from classes.item import item
 
 class equipment(item):
     __helmet = None
