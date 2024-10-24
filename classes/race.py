@@ -1,4 +1,4 @@
-class race:
+class Race:
     __name = None
     __origine = None
     __reputation = None
