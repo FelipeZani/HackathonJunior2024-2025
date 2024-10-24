@@ -1,14 +1,12 @@
 from building import building
 
 class shop(building):
-    __shopName = None
+    
     __shopInventory = None
-    def __init__(self,chesName,chestInventory):
-        self.shopName = shopName
+    def __init__(self,name,architecture,owner,shopInventory):
+        super.__init__(self, name, architecture)
         self.shopInventory = shopInventory
         
-    def getShopName(self):
-        return self.shopName
     def getShopInventory(self):
         return self.shopInventory
     
