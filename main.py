@@ -65,7 +65,7 @@ def createRace():
     r = race(name,origine,reputaion,modif)
     return r
 
-def RaceValues(race):
+def raceValues(race):
     return [race.getName(),race.getOrigine(),race.getReputation(),statValues(race.getModif())]
 
 def creatItem():
