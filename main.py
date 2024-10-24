@@ -3,7 +3,7 @@ from classes.equipment import equipment
 from classes.building import building
 from classes.shop import shop
 from classes.chest import chest
-from classes.inventory import Inventory
+from classes.inventory import inventory
 from classes.hstatistic import statistic
 from classes.race import race
 from classes.role import role 
