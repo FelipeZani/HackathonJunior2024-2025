@@ -1,4 +1,4 @@
-from hstatistics import statistics
+from hstatistic import statistic
 
 class item:
     __name = None
