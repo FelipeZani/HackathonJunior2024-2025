@@ -1,4 +1,4 @@
-class Equipment:
+class equipment:
     __helmet = None
     __chestplate = None
     __leggings = None
