@@ -17,6 +17,10 @@ class statistic:
         self.__racism = racism
         self.__crit = crit
         self.__critModifier = critModifier
+        
+    def __str__(self):
+        return f'Health = {self.__health}\nMana = {self.__mana}\nAttack = {self.__attack}\nDefense = {self.__defense}\nElement = {self.__element}\nRacism = {self.__racism}\nCrit = {self.__crit}\nCritModifier = {self.__critModifier}'
+
 
     def getHealth(self):
         return self.__health

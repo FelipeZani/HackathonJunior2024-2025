@@ -21,6 +21,9 @@ class alive:
         self.__inventory = inventory
         self.__equipment = equipment
     
+    def __str__(self):
+        return f'Name = {self.__name}\nStats = {self.__statistic}\nRace = {self.__race}\nHostility = {self.__hostility}\nRole = {self.__role}\nSkills = {self.__skills}\nInventory = {self.__inventory}\nEquipment = {self.__equipment}'
+    
     def getName(self):
         return self.__name
     def getStats(self):
