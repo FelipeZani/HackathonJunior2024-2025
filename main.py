@@ -1,4 +1,5 @@
 from functions import *
+from saveLoadData import *
 
 def main():
     ListRaces = []
@@ -89,7 +90,7 @@ def main():
                         print("________________________________________________________________________________________________")
                         ask = input("")
                         if ask =="210":
-                            loop1 = 1
+                            loop = 1
                         elif ask =="211":
                             p = createPlayer(ListRaces,ListRoles,ListSkills)
                             print(str(p))
@@ -126,7 +127,7 @@ def main():
                         if ask =="220":
                             loop2 = 1
                         elif ask =="221":
-                            npc = createNPC(ListRaces,ListRoles,ListSkills)
+                            npc = createNPC()
                             print(str(npc))
                             ListNPC.append(npc)
                         elif ask == "222":
@@ -138,7 +139,6 @@ def main():
                                 print("")
                             else :
                                 for j in range(len(ListNPC)):
-                                    print("-------------------------")
                                     print(ListNPC[j])
                             print("________________________________________________________________________________________________")
                             print("________________________________________________________________________________________________")
@@ -162,19 +162,18 @@ def main():
                         if ask =="230":
                             loop3 = 1
                         elif ask =="231":
-                            cre = createCreature(ListRaces,ListRoles,ListSkills)
+                            cre = createCreature()
                             print(str(cre))
                             ListCreature.append(cre)
                         elif ask == "232":
                             print("________________________________________________________________________________________________")
                             print("________________________________________________________________________________________________")
-                            print("This is all your creatures :")
-                            print("creatures List : ")
+                            print("This is all your NPCs :")
+                            print("NPCs List : ")
                             if len(ListCreature)==0:
                                 print("")
                             else :
                                 for j in range(len(ListCreature)):
-                                    print("-------------------------")
                                     print(ListCreature[j])
                             print("________________________________________________________________________________________________")
                             print("________________________________________________________________________________________________")
@@ -307,5 +306,24 @@ def main():
                     print("\n"*100)
     
     
+        if ListRaces:
+            saveData(ListRaces)            
+        if  ListPlayer:
+            saveData(ListPlayer)
+        
+        if  ListNPC:
+            saveData(ListNPC)
+        
+        if  ListCreature : 
+            saveData(ListCreature)
+        if ListItem:
+            saveData(ListItem)
+        if ListSkills:
+            saveData(ListSkills)
+        if ListRoles:
+            saveData(ListRoles)
+        if ListBuilding:
+            saveData(ListBuilding)
     return 0
+
 main()

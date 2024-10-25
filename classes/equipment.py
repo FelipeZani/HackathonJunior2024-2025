@@ -20,10 +20,6 @@ class equipment():
         self.__mainHold = mainHold
         self.__secondHold = secondHold
         
-    def __str__(self):
-        return f'Helmet = {self.__helmet}\nChestplate = {self.__chestplate}\nLeggings = {self.__leggings}\nBoots = {self.__boots}\nRing1 = {self.__ring1}\nRing2 = {self.__ring2}\nMainHold = {self.__mainHold}\nSecondHold = {self.__secondHold}'
-
-        
     def getHelemet(self):
         return self.__helmet
     def getChestplate(self):

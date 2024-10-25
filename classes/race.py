@@ -9,10 +9,6 @@ class race:
         self.__reputation = reputaion
         self.__modif = modif
 
-    def __str__(self):
-        return f'Name = {self.__name}\nOrigine = {self.__origine}\nReputation= {self.__reputation}\nModif= {self.__modif}'
-
-    
     def getName(self):
         return self.__name
     def getOrigine(self):

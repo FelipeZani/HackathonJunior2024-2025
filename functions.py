@@ -1,4 +1,3 @@
-import sys
 from classes.alive import alive
 from classes.equipment import equipment
 from classes.building import building
