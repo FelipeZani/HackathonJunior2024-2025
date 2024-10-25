@@ -126,7 +126,7 @@ def main():
                         if ask =="220":
                             loop2 = 1
                         elif ask =="221":
-                            npc = createNPC()
+                            npc = createNPC(ListRaces,ListRoles,ListSkills)
                             print(str(npc))
                             ListNPC.append(npc)
                         elif ask == "222":
@@ -138,6 +138,7 @@ def main():
                                 print("")
                             else :
                                 for j in range(len(ListNPC)):
+                                    print("-------------------------")
                                     print(ListNPC[j])
                             print("________________________________________________________________________________________________")
                             print("________________________________________________________________________________________________")
@@ -161,18 +162,19 @@ def main():
                         if ask =="230":
                             loop3 = 1
                         elif ask =="231":
-                            cre = createCreature()
+                            cre = createCreature(ListRaces,ListRoles,ListSkills)
                             print(str(cre))
                             ListCreature.append(cre)
                         elif ask == "232":
                             print("________________________________________________________________________________________________")
                             print("________________________________________________________________________________________________")
-                            print("This is all your NPCs :")
-                            print("NPCs List : ")
+                            print("This is all your creatures :")
+                            print("creatures List : ")
                             if len(ListCreature)==0:
                                 print("")
                             else :
                                 for j in range(len(ListCreature)):
+                                    print("-------------------------")
                                     print(ListCreature[j])
                             print("________________________________________________________________________________________________")
                             print("________________________________________________________________________________________________")
@@ -306,3 +308,4 @@ def main():
     
     
     return 0
+main()
