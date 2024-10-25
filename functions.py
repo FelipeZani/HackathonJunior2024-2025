@@ -27,16 +27,6 @@ def createChest(): #creating a chest
     invent = createInventory()
     newChest = chest(build.getName(),build.getArchitecture(),build.getOwner(),invent,build)
     return newChest
-def chestValues(chest):
-     return[buildingValues(chest.getBuild()),chest.getInventory()]
-
-def createShop(): #creating a chest
-    build = createBuilding()
-    invent = createInventory()
-    newShop = chest(build.getName(),build.getArchitecture(),build.getOwner(),invent,build)
-    return newShop
-def shopValues(shop):
-    return[buildingValues(shop.getBuild()),shop.getInventory()]
 
 def createRegion():
 
@@ -74,7 +64,7 @@ def createRegion():
     return region(topography,regionCoordinateX,constructionLM)
 
 
-def createAliveStat(): #creating the stats
+def createAliveStat():
      
     health = int(input("Choose the amount of Health from 1 to 999 999 999: "))
     mana = int(input("Choose the amount of Mana from 1 to 255 :"))
@@ -89,7 +79,7 @@ def createAliveStat(): #creating the stats
     
     return s
      
-def createItemStat(itemClass): #creating stats for items
+def createItemStat(itemClass):
     if itemClass == "Null":
         health = 0
         mana = 0
@@ -114,10 +104,7 @@ def createItemStat(itemClass): #creating stats for items
         i = statistic(health,mana,attack,defense,element,racism,crit,critModifier)
     return i 
 
-def statValues(stat):
-    return [stat.getHealth(),stat.getMana(),stat.getAttack(),stat.getDefense(),stat.getElement(),stat.getRacism(),stat.getCrit(),stat.getCritModifier()]
-
-def createskills(): #creating skill
+def createskills():
     name = input("name your skill")
     level = 1
     description = input("Choose the description of your skill")
@@ -125,20 +112,16 @@ def createskills(): #creating skill
     skill = skills(name,level,description,delay)
     return skill
 
-def skillValues(skill):
-    return [skill.getName(),skill.getLevel(),skill.getDescription(),skill.getDelay()]
 
-def createBuilding(): #creating building
+def createBuilding():
     name = input("Choose the name of the building")
     architecture = input("Choose the architecture of the building")
     owner = input("Choose the name of the owner of the building")
     build = building(name,architecture,owner)
     return build
 
-def buildingValues(build):
-    return [build.getName(),build.getArchitecture(),build.getOwner()]
 
-def createRace(): #creating a race
+def createRace():
     name = str(input('Choose the name of the race : '))
     origine = 'EMPTYY'
     reputaion = int(input('Choose the reputation of the race from 1 to 255, (1 means bad reputation, 255 means good reputation): '))
@@ -146,10 +129,7 @@ def createRace(): #creating a race
     r = race(name,origine,reputaion,modif)
     return r
 
-def raceValues(race):
-    return [race.getName(),race.getOrigine(),race.getReputation(),statValues(race.getModif())]
-
-def createItem(): #create an item
+def createItem():
     name = input("Choose the name of your Item : ")
     itemClass = input("Choose your item CLass : helmet, chetsplate, leggings, boots, ring, weapon, consumable, Null : ")
     weight = float(input("Choose your Item's weight : "))
@@ -172,30 +152,93 @@ def createItem(): #create an item
         i=item(name,weight,stats)
     return i
 
-def itemValues(item):
-     return [item.getName(),item.getWeight(),statValues(item.getStats())]
 
-def createInventory(): #create an inventory
-    howMany = 0
+def createInventory():
     listInventory = []
     maxWeight = input("Choose the max wheight of the inventory : ")
-    howMany = int(input("How many items do you  want in your inventory : "))
-    for i in range (0,howMany):
-         newitem = createItem()
-         listInventory.append(newitem)
     invent = hinventory(maxWeight,listInventory)
     return invent
 
-def inventoryValues(hinventory):
-     return [hinventory.getMaxWeight(),hinventory.getDicItem()]
 
 
-
-def createRole(): #creating the roles
+def createRole():
      name = input("Choose the name of the role : ")
      stats = createAliveStat()
      newRole = role(name,stats)
      return newRole
 
-def roleValues(role):
-     return[role.getName(),role.getStats()]
+
+def createPlayer(listeRace,listeRole,listeSkill):
+     name = input("Choose your Player's name : ")
+     stats = createAliveStat()
+     for u in range(len(listeRace)):
+         print("-------------------------")
+         print(str(listeRace[u]))
+     i=int(input("What race do you want your player to be : "))
+     race = listeRace[i-1]
+     hostility = 1
+     for u in range(len(listeRole)):
+         print("-------------------------")
+         print(str(listeRole[u]))
+     r=int(input("What role do you want your player to be : "))
+     role = listeRole[r-1]
+     inventory = createInventory()
+     if listeSkill == []:
+         skill = None
+     else:
+         s=int(input("What skill do you want your player to have : "))
+         skill=listeSkill[s-1]
+     equipmnt = equipment(None,None,None,None,None,None,None,None)
+     player1 = player(name,stats,race,hostility,role,skill,inventory,equipmnt)
+
+     return player1    
+ 
+def createNPC(listeRace,listeRole,listeSkill):
+     name = input("Choose your Player's name : ")
+     stats = createAliveStat()
+     for u in range(len(listeRace)):
+         print("-------------------------")
+         print(str(listeRace[u]))
+     i=int(input("What race do you want your player to be : "))
+     race = listeRace[i-1]
+     hostility = 0
+     for u in range(len(listeRole)):
+         print("-------------------------")
+         print(str(listeRole[u]))
+     r=int(input("What role do you want your player to be : "))
+     role = listeRole[r-1]
+     inventory = createInventory()
+     if listeSkill == []:
+         skill = None
+     else:
+         s=int(input("What skill do you want your player to have : "))
+         skill=listeSkill[s-1]
+     equipmnt = equipment(None,None,None,None,None,None,None,None)
+     player1 = npc(name,stats,race,hostility,role,skill,inventory,equipmnt)
+
+     return player1    
+
+def createCreature(listeRace,listeRole,listeSkill):
+     name = input("Choose your Player's name : ")
+     stats = createAliveStat()
+     for u in range(len(listeRace)):
+         print("-------------------------")
+         print(str(listeRace[u]))
+     i=int(input("What race do you want your player to be : "))
+     race = listeRace[i-1]
+     hostility = 1
+     for u in range(len(listeRole)):
+         print("-------------------------")
+         print(str(listeRole[u]))
+     r=int(input("What role do you want your player to be : "))
+     role = listeRole[r-1]
+     inventory = createInventory()
+     if listeSkill == []:
+         skill = None
+     else:
+         s=int(input("What skill do you want your player to have : "))
+         skill=listeSkill[s-1]
+     equipmnt = equipment(None,None,None,None,None,None,None,None)
+     player1 = creature(name,stats,race,hostility,role,skill,inventory,equipmnt)
+
+     return player1    
