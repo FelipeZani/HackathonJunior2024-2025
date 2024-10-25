@@ -31,6 +31,14 @@ def createChest(): #creating a chest
 def chestValues(chest):
      return[buildingValues(chest.getBuild()),chest.getInventory()]
 
+def createShop(): #creating a chest
+    build = createBuilding()
+    invent = createInventory()
+    newShop = chest(build.getName(),build.getArchitecture(),build.getOwner(),invent,build)
+    return newShop
+def shopValues(shop):
+    return[buildingValues(shop.getBuild()),shop.getInventory()]
+
 def createRegion():
 
     regionCoordinateX = input("Choose intenger numbers to be the coordinates of your region, the form is a square of edge x: ") # coordinate to add onto the canvas
