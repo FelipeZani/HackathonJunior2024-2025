@@ -67,18 +67,29 @@ def createAliveStat():
     
     return s
      
-def createItemStat():
-     
-    health = int(input("Choose the Health bonus from 0 to 999 999 999: "))
-    mana = int(input("Choose the Mana bonus from 0 to 255 :"))
-    attack= int(input("Choose the Attack bonus 0 to 255 : "))
-    defense = int(input("Choose the Defense bonus from 0 to 255 : "))
-    element = 0
-    racism = 0
-    crit = float(input("Choose the probability of crit attack bonus from 0 to 1 : "))
-    critModifier = int(input("Choose the multiplier of a crit attack bonus from 0 to 1000 : "))
-    assert (0<=health<=999_999_999) and (0<=mana<=255) and (0<=attack<=255) and (0<=defense<=255) and (0<=racism<=999_999_999 )and (0<=crit<=1) and (0<=critModifier<=1000), 'Respect  the min and max amount for each stat'
-    i = statistic(health,mana,attack,defense,element,racism,crit,critModifier)
+def createItemStat(itemClass):
+    if itemClass == "Null":
+        health = 0
+        mana = 0
+        attack= 0
+        defense = 0
+        element = 0
+        racism = 0
+        crit = 0
+        critModifier = 0
+        i = statistic(health,mana,attack,defense,element,racism,crit,critModifier)
+        
+    else : 
+        health = int(input("Choose the Health bonus from 0 to 999 999 999: "))
+        mana = int(input("Choose the Mana bonus from 0 to 255 :"))
+        attack= int(input("Choose the Attack bonus 0 to 255 : "))
+        defense = int(input("Choose the Defense bonus from 0 to 255 : "))
+        element = 0
+        racism = 0
+        crit = float(input("Choose the probability of crit attack bonus from 0 to 1 : "))
+        critModifier = int(input("Choose the multiplier of a crit attack bonus from 0 to 1000 : "))
+        assert (0<=health<=999_999_999) and (0<=mana<=255) and (0<=attack<=255) and (0<=defense<=255) and (0<=racism<=999_999_999 )and (0<=crit<=1) and (0<=critModifier<=1000), 'Respect  the min and max amount for each stat'
+        i = statistic(health,mana,attack,defense,element,racism,crit,critModifier)
     return i 
 
 def statValues(stat):
@@ -107,11 +118,25 @@ def raceValues(race):
 
 def createItem():
     name = input("Choose the name of your Item : ")
-    weight = input("Choose your Item's weight : ")
-    stats = createItemStat()
-    
-    i= item(name,weight,stats)
-
+    itemClass = input("Choose your item CLass : helmet, chetsplate, leggings, boots, ring, weapon, consumable, Null : ")
+    weight = float(input("Choose your Item's weight : "))
+    stats = createItemStat(itemClass)
+    if itemClass == "helmet":
+            i= helmet(name,weight,stats)
+    elif itemClass == "chestplate":
+            i= chestplate(name,weight,stats)
+    elif itemClass == "leggings":
+            i= leggings(name,weight,stats)
+    elif itemClass == "boots":
+            i= boots(name,weight,stats)
+    elif itemClass == "ring":
+            i= ring(name,weight,stats)
+    elif itemClass == "weapon":
+            i= weapon(name,weight,stats)
+    elif itemClass == "consumable":
+            i= consumable(name,weight,stats)
+    else:
+        i=item(name,weight,stats)
     return i
 
 def itemValues(item):
