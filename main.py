@@ -103,6 +103,17 @@ def createItemStat(itemClass):
 def statValues(stat):
     return [stat.getHealth(),stat.getMana(),stat.getAttack(),stat.getDefense(),stat.getElement(),stat.getRacism(),stat.getCrit(),stat.getCritModifier()]
 
+def createskills():
+    name = input("name your skill")
+    level = 1
+    description = input("Choose the description of your skill")
+    delay = int(input("Choose the delay of action of your skill"))
+    skill = skills(name,level,description,delay)
+    return skill
+
+def skillValues(skill):
+    return [skill.getName(),skill.getLevel(),skill.getDescription(),skill.getDelay()]
+
 def createBuilding():
     name = input("Choose the name of the building")
     architecture = input("Choose the architecture of the building")
