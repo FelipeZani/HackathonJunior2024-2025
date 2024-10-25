@@ -172,7 +172,7 @@ def createInventory():
     invent = hinventory(maxWeight,listInventory)
     return invent
 
-def InventoryValues(hinventory):
+def inventoryValues(hinventory):
      return [hinventory.getMaxWeight(),hinventory.getDicItem()]
 
     
