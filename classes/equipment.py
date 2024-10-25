@@ -1,6 +1,6 @@
 from classes.item import item
 
-class equipment(item):
+class equipment():
     __helmet = None
     __chestplate = None
     __leggings = None
@@ -10,8 +10,7 @@ class equipment(item):
     __mainHold = None
     __secondHold = None
     
-    def __init__(self,name, weight, stats, helmet,chestplate,leggings,boots,ring1,ring2,mainHold,secondHold):
-        super().__init__(name, weight, stats)
+    def __init__(self,helmet,chestplate,leggings,boots,ring1,ring2,mainHold,secondHold):
         self.__helmet = helmet
         self.__chestplate = chestplate
         self.__leggings = leggings
@@ -38,4 +37,38 @@ class equipment(item):
     def getSecondHold(self):
         return self.__secondHold
     
+    
+    def changeHelmet(self,itm):
+        self.__helmet = itm
+    def changeChestplate(self,itm):
+        self.__chestplate = itm
+    def changeLeggings(self,itm):
+        self.__leggings = itm
+    def changeBoots(self,itm):
+        self.__boots = itm
+    def changeRing1(self,itm):
+        self.__ring1 = itm
+    def changeRing2(self,itm):
+        self.__ring2 = itm
+    def changeMainHold(self,itm):
+        self.__mainHold = itm
+    def changeSecondHold(self,itm):
+        self.__secondHold = itm
         
+    
+    def delHelmet(self):
+        self.__helmet = None
+    def delChestplate(self):
+        self.__chestplate = None
+    def delLeggings(self):
+        self.__leggings = None
+    def delBoots(self):
+        self.__boots = None
+    def delRing1(self):
+        self.__ring1 = None
+    def delRing2(self):
+        self.__ring2 = None
+    def delMainHold(self):
+        self.__mainHold = None
+    def delSecondHold(self):
+        self.__secondHold = None
