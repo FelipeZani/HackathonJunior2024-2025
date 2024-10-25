@@ -177,13 +177,8 @@ def itemValues(item):
      return [item.getName(),item.getWeight(),statValues(item.getStats())]
 
 def createInventory(): #create an inventory
-    howMany = 0
     listInventory = []
     maxWeight = input("Choose the max wheight of the inventory : ")
-    howMany = int(input("How many items do you  want in your inventory : "))
-    for i in range (0,howMany):
-         newitem = createItem()
-         listInventory.append(newitem)
     invent = hinventory(maxWeight,listInventory)
     return invent
 
