@@ -11,7 +11,7 @@ class equipment(item):
     __secondHold = None
     
     def __init__(self,name, weight, stats, helmet,chestplate,leggings,boots,ring1,ring2,mainHold,secondHold):
-        super.__init__(name, weight, stats)
+        super().__init__(name, weight, stats)
         self.__helmet = helmet
         self.__chestplate = chestplate
         self.__leggings = leggings
