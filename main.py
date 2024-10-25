@@ -23,6 +23,13 @@ from classes.ring import ring
 from classes.weapon import weapon
 
 
+def createChest(): #creating a chest
+    build = createBuilding()
+    invent = createInventory()
+    newChest = chest(build.getName(),build.getArchitecture(),build.getOwner(),invent,build)
+    return newChest
+def chestValues(chest):
+     return[buildingValues(chest.getBuild()),chest.getInventory()]
 
 def createRegion():
 
