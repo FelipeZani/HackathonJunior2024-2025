@@ -20,6 +20,9 @@ class alive:
         self.__skills = skills
         self.__inventory = inventory
         self.__equipment = equipment
+
+    def __str__(self):
+        return f'Name = {self.name}\nStats = {self.stats}\n Race = {self.race}\nHostility = {self.hostility}\nRole = {self.role}\nSkills = {self.skills}\nInventory = {self.inventory}\nEquipment = {self.equipment}'
     
     def getName(self):
         return self.__name
