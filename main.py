@@ -175,7 +175,17 @@ def createInventory():
 def inventoryValues(hinventory):
      return [hinventory.getMaxWeight(),hinventory.getDicItem()]
 
-    
+
+
+def createRole():
+     name = input("Choose the name of the role : ")
+     stats = createAliveStat()
+     newRole = role(name,stats)
+     return newRole
+
+def roleValues(role):
+     return[role.getName(),role.getStats()]
+
 
 def main():
     s = createStat()
