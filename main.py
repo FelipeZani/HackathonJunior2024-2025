@@ -67,7 +67,7 @@ def createRegion():
     return region(topography,regionCoordinateX,constructionLM)
 
 
-def createAliveStat():
+def createAliveStat(): #creating the stats
      
     health = int(input("Choose the amount of Health from 1 to 999 999 999: "))
     mana = int(input("Choose the amount of Mana from 1 to 255 :"))
@@ -82,7 +82,7 @@ def createAliveStat():
     
     return s
      
-def createItemStat(itemClass):
+def createItemStat(itemClass): #creating stats for items
     if itemClass == "Null":
         health = 0
         mana = 0
@@ -110,7 +110,7 @@ def createItemStat(itemClass):
 def statValues(stat):
     return [stat.getHealth(),stat.getMana(),stat.getAttack(),stat.getDefense(),stat.getElement(),stat.getRacism(),stat.getCrit(),stat.getCritModifier()]
 
-def createskills():
+def createskills(): #creating skill
     name = input("name your skill")
     level = 1
     description = input("Choose the description of your skill")
@@ -121,7 +121,7 @@ def createskills():
 def skillValues(skill):
     return [skill.getName(),skill.getLevel(),skill.getDescription(),skill.getDelay()]
 
-def createBuilding():
+def createBuilding(): #creating building
     name = input("Choose the name of the building")
     architecture = input("Choose the architecture of the building")
     owner = input("Choose the name of the owner of the building")
@@ -131,7 +131,7 @@ def createBuilding():
 def buildingValues(build):
     return [build.getName(),build.getArchitecture(),build.getOwner()]
 
-def createRace():
+def createRace(): #creating a race
     name = str(input('Choose the name of the race : '))
     origine = 'EMPTYY'
     reputaion = int(input('Choose the reputation of the race from 1 to 255, (1 means bad reputation, 255 means good reputation): '))
@@ -142,7 +142,7 @@ def createRace():
 def raceValues(race):
     return [race.getName(),race.getOrigine(),race.getReputation(),statValues(race.getModif())]
 
-def createItem():
+def createItem(): #create an item
     name = input("Choose the name of your Item : ")
     itemClass = input("Choose your item CLass : helmet, chetsplate, leggings, boots, ring, weapon, consumable, Null : ")
     weight = float(input("Choose your Item's weight : "))
@@ -168,7 +168,7 @@ def createItem():
 def itemValues(item):
      return [item.getName(),item.getWeight(),statValues(item.getStats())]
 
-def createInventory():
+def createInventory(): #create an inventory
     howMany = 0
     listInventory = []
     maxWeight = input("Choose the max wheight of the inventory : ")
@@ -184,7 +184,7 @@ def inventoryValues(hinventory):
 
 
 
-def createRole():
+def createRole(): #creating the roles
      name = input("Choose the name of the role : ")
      stats = createAliveStat()
      newRole = role(name,stats)
