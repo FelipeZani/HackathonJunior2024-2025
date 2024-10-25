@@ -2,7 +2,6 @@ from classes.hstatistic import statistic
 
 class role:
     __nom = None
-    __type = None
     __stats = None
 
     def __init__(self, nom, stats):
