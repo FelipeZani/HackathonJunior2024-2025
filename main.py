@@ -105,7 +105,7 @@ def createRace():
 def raceValues(race):
     return [race.getName(),race.getOrigine(),race.getReputation(),statValues(race.getModif())]
 
-def creatItem():
+def createItem():
     name = input("Choose the name of your Item : ")
     weight = input("Choose your Item's weight : ")
     stats = createItemStat()
