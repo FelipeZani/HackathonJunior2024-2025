@@ -89,7 +89,7 @@ def main():
                         print("________________________________________________________________________________________________")
                         ask = input("")
                         if ask =="210":
-                            loop = 1
+                            loop1 = 1
                         elif ask =="211":
                             p = createPlayer(ListRaces,ListRoles,ListSkills)
                             print(str(p))
