@@ -15,6 +15,14 @@ from classes.npc import npc
 from classes.region import region
 from classes.creature import creature
 from classes.consumable import consumable
+from classes.helmet import helmet
+from classes.chestplate import chestplate
+from classes.leggings import leggings
+from classes.boots import boots
+from classes.ring import ring
+from classes.weapon import weapon
+
+
 
 def createRegion():
 
