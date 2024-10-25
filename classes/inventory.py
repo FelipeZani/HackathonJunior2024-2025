@@ -1,18 +1,14 @@
 class hinventory:
     __maxWeight = None
-    __weight = None
-    __dicObject = None
-    def __init__(self,maxWeight,weight,dicObject):
+    __dicItem = None
+    def __init__(self,maxWeight,dicItem):
         self.__maxWeight = maxWeight
-        self.__weight = weight
-        self.__dicObject = dicObject
+        self.__dicItem = dicItem
         
     def getMaxWeight(self):
         return self.__maxWeight
-    def getWeight(self):
-        return self.__weight
-    def getDicObject(self):
-        return self.__dicObject
+    def getDicItem(self):
+        return self.__dicItem
     
     
         
