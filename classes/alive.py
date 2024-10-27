@@ -1,6 +1,3 @@
-from classes.hstatistic import statistic
-from classes.race import race
-from classes.role import role
 class alive:
     __name = None
     __statistic = None
@@ -22,7 +19,7 @@ class alive:
         self.__equipment = equipment
     
     def __str__(self):
-        return f'Name = {self.__name}\nStatistic = {self.__statistic}\nRace = {self.__race}\nHostility= {self.__hostility}\nRole = {self.__role}\nSKills= {self.__skills}\nInventory = {self.__inventory}\nEquipment = {self.__equipment}'
+        return f'-Alive Name = {self.__name}\n-Alive Statistic :\n{self.__statistic}\n-Alive Race :\n{self.__race}\n-Alive Hostility = {self.__hostility}\n-Alive Role :\n{self.__role}\n-Alive SKills= {self.__skills}\n-Alive Inventory = {self.__inventory}\n-Alive Equipment = {self.__equipment}'
 
     
     def getName(self):
