@@ -1,3 +1,4 @@
+import sys
 from classes.alive import alive
 from classes.equipment import equipment
 from classes.building import building
@@ -171,14 +172,16 @@ def createRole():
 def createPlayer(listeRace,listeRole,listeSkill):
      name = input("Choose your Player's name : ")
      stats = createAliveStat()
+     print("----------Races----------")
      for u in range(len(listeRace)):
-         print("-------------------------")
+         print("------------"+str(u+1)+"------------")
          print(str(listeRace[u]))
      i=int(input("What race do you want your player to be : "))
      race = listeRace[i-1]
      hostility = 1
+     print("----------Roles----------")
      for u in range(len(listeRole)):
-         print("-------------------------")
+         print("------------"+str(u+1)+"------------")
          print(str(listeRole[u]))
      r=int(input("What role do you want your player to be : "))
      role = listeRole[r-1]
