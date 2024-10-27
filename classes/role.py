@@ -8,6 +8,9 @@ class role:
         self.__name = name
         self.__stats = stats
 
+    def __str__(self):
+        return f'Name = {self.__name}\nStatistic = {self.__stats}'
+
     def getName(self):
         return self.__name
     def getStats(self):
