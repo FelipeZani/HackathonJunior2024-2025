@@ -1,5 +1,6 @@
 from functions import *
 from saveLoadData import *
+import shutil
 
 def main():
     ListRaces = []
@@ -13,8 +14,8 @@ def main():
     
     print("________________________________________________________________________________________________")
     print("________________________________________________________________________________________________")
-    print("WELCOME IN HACKATHON RPG MAKER !")
-    print("You will be able to create your RPG")
+    print("\033[1;32m   WELCOME IN HACKATHON RPG MAKER !".center(shutil.get_terminal_size().columns))
+    print("You will be able to create your RPG\033[0m".center(shutil.get_terminal_size().columns))
     print("________________________________________________________________________________________________")
     print("________________________________________________________________________________________________")
     print("\n"*3)
@@ -22,11 +23,17 @@ def main():
     while running == 0:
         print("________________________________________________________________________________________________")
         print("________________________________________________________________________________________________")
-        print("What do you want to do ?")
-        print("0 : stop\n1 : Race\n2 : Player\n3 : Skills\n4 : Items\n5 : Building\n6 : Role")
+        print("\033[1;32mWhat do you want to do ?")
+        print("0 : stop       ".center(shutil.get_terminal_size().columns))
+        print("1 : Race       ".center(shutil.get_terminal_size().columns))
+        print("2 : Player     ".center(shutil.get_terminal_size().columns))
+        print("3 : Skills     ".center(shutil.get_terminal_size().columns))
+        print("4 : Items      ".center(shutil.get_terminal_size().columns))
+        print("5 : Building   ".center(shutil.get_terminal_size().columns))
+        print("6 : Role       ".center(shutil.get_terminal_size().columns))
+        print("\033[0m________________________________________________________________________________________________")
         print("________________________________________________________________________________________________")
-        print("________________________________________________________________________________________________")
-        ask = input("")
+        ask = input("\033[0;36m>>> \033[0m")
         if ask == "0":
             running = 1
         elif ask == "1":
@@ -35,15 +42,18 @@ def main():
                 
                 print("________________________________________________________________________________________________")
                 print("________________________________________________________________________________________________")
-                print("What do you want to do ?")
-                print("10 : back\n11 : Create Race\n12 : View Races\n")
+                print("\033[1;32mWhat do you want to do ?")
+                print("10 : back       ".center(shutil.get_terminal_size().columns))
+                print("11 : Create Race".center(shutil.get_terminal_size().columns))
+                print("12 : View Races ".center(shutil.get_terminal_size().columns))
+                print("\033[0m________________________________________________________________________________________________")
                 print("________________________________________________________________________________________________")
-                print("________________________________________________________________________________________________")
-                ask = input("")
+                ask = input("\033[0;36m>>> \033[0m")
                 if ask == "10":
                     loop = 1
                 elif ask == "11":
                     r = createRace()
+                    print("-------------------------")
                     print(str(r))
                     ListRaces.append(r)
                 elif ask == "12":
@@ -56,7 +66,7 @@ def main():
                     else :
                         for j in range(len(ListRaces)):
                             print("-------------------------")
-                            print(ListRaces[j])
+                            print(str(ListRaces[j]))
                     print("________________________________________________________________________________________________")
                     print("________________________________________________________________________________________________")
                     input("Click entry to continue")
@@ -68,11 +78,14 @@ def main():
                 
                 print("________________________________________________________________________________________________")
                 print("________________________________________________________________________________________________")
-                print("What do you want to do ?")
-                print("20 : back\n21 : Player\n22 : NPC\n23 : Creature")
+                print("\033[1;32mWhat do you want to do ?".center(shutil.get_terminal_size().columns))
+                print("20 : back".center(shutil.get_terminal_size().columns))
+                print("21 : Player".center(shutil.get_terminal_size().columns))
+                print("22 : NPC".center(shutil.get_terminal_size().columns))
+                print("23 : Creature".center(shutil.get_terminal_size().columns))
+                print("\033[0m________________________________________________________________________________________________")
                 print("________________________________________________________________________________________________")
-                print("________________________________________________________________________________________________")
-                ask = input("")
+                ask = input("\033[0;36m>>> \033[0m")
                 if ask == "20":
                     loop = 1
                 elif ask == "21":
@@ -84,15 +97,18 @@ def main():
                             
                         print("________________________________________________________________________________________________")
                         print("________________________________________________________________________________________________")
-                        print("What do you want to do ?")
-                        print("210 : back\n211 : Create Player\n212 : View Players\n")
+                        print("\033[1;32mWhat do you want to do ?")
+                        print("210 : back         ".center(shutil.get_terminal_size().columns))
+                        print("211 : Create Player".center(shutil.get_terminal_size().columns))
+                        print("212 : View Players ".center(shutil.get_terminal_size().columns))
+                        print("\033[0m________________________________________________________________________________________________")
                         print("________________________________________________________________________________________________")
-                        print("________________________________________________________________________________________________")
-                        ask = input("")
+                        ask = input("\033[0;36m>>> \033[0m")
                         if ask =="210":
-                            loop = 1
+                            loop1 = 1
                         elif ask =="211":
                             p = createPlayer(ListRaces,ListRoles,ListSkills)
+                            print("-------------------------")
                             print(str(p))
                             ListPlayer.append(p)
                         elif ask == "212":
@@ -119,11 +135,13 @@ def main():
                             
                         print("________________________________________________________________________________________________")
                         print("________________________________________________________________________________________________")
-                        print("What do you want to do ?")
-                        print("220 : back\n221 : Create NPC\n222 : View NPCs\n")
+                        print("\033[1;32mWhat do you want to do ?")
+                        print("220 : back      ".center(shutil.get_terminal_size().columns))
+                        print("221 : Create NPC".center(shutil.get_terminal_size().columns))
+                        print("222 : View NPCs ".center(shutil.get_terminal_size().columns))
+                        print("\033[0m________________________________________________________________________________________________")
                         print("________________________________________________________________________________________________")
-                        print("________________________________________________________________________________________________")
-                        ask = input("")
+                        ask = input("\033[0;36m>>> \033[0m")
                         if ask =="220":
                             loop2 = 1
                         elif ask =="221":
@@ -154,11 +172,13 @@ def main():
                             
                         print("________________________________________________________________________________________________")
                         print("________________________________________________________________________________________________")
-                        print("What do you want to do ?")
-                        print("230 : back\n231 : Create Creature\n232 : View Creatures\n")
+                        print("\033[1;32mWhat do you want to do ?")
+                        print("230 : back           ".center(shutil.get_terminal_size().columns))
+                        print("231 : Create Creature".center(shutil.get_terminal_size().columns))
+                        print("232 : View Creatures ".center(shutil.get_terminal_size().columns))
                         print("________________________________________________________________________________________________")
                         print("________________________________________________________________________________________________")
-                        ask = input("")
+                        ask = input("\033[0;36m>>> \033[0m")
                         if ask =="230":
                             loop3 = 1
                         elif ask =="231":
@@ -185,11 +205,13 @@ def main():
                 
                 print("________________________________________________________________________________________________")
                 print("________________________________________________________________________________________________")
-                print("What do you want to do ?")
-                print("30 : back\n31 : Create Skills\n32 : View all Skills\n")
+                print("\033[1;32mWhat do you want to do ?")
+                print("30 : back           ".center(shutil.get_terminal_size().columns))
+                print("31 : Create Skills  ".center(shutil.get_terminal_size().columns))
+                print("32 : View all Skills".center(shutil.get_terminal_size().columns))
+                print("\033[0m________________________________________________________________________________________________")
                 print("________________________________________________________________________________________________")
-                print("________________________________________________________________________________________________")
-                ask = input("")
+                ask = input("\033[0;36m>>> \033[0m")
                 if ask == "30":
                     loop = 1
                 elif ask == "31":
@@ -216,11 +238,13 @@ def main():
                 
                 print("________________________________________________________________________________________________")
                 print("________________________________________________________________________________________________")
-                print("What do you want to do ?")
-                print("40 : back\n41 : Create Item\n42 : View All Items\n")
+                print("\033[1;32mWhat do you want to do ?")
+                print("40 : back          ".center(shutil.get_terminal_size().columns))
+                print("41 : Create Item   ".center(shutil.get_terminal_size().columns))
+                print("42 : View All Items".center(shutil.get_terminal_size().columns))
+                print("\033[0m________________________________________________________________________________________________")
                 print("________________________________________________________________________________________________")
-                print("________________________________________________________________________________________________")
-                ask = input("")
+                ask = input("\033[0;36m>>> \033[0m")
                 if ask == "40":
                     loop = 1
                 elif ask == "41":
@@ -247,11 +271,13 @@ def main():
                 
                 print("________________________________________________________________________________________________")
                 print("________________________________________________________________________________________________")
-                print("What do you want to do ?")
-                print("50 : back\n51 : Create Building\n52 : View All Building\n")
+                print("\033[1;32mWhat do you want to do ?")
+                print("50 : back             ".center(shutil.get_terminal_size().columns))
+                print("51 : Create Building  ".center(shutil.get_terminal_size().columns))
+                print("52 : View All Building".center(shutil.get_terminal_size().columns))
+                print("\033[0m________________________________________________________________________________________________")
                 print("________________________________________________________________________________________________")
-                print("________________________________________________________________________________________________")
-                ask = input("")
+                ask = input("\033[0;36m>>> \033[0m")
                 if ask == "50":
                     loop = 1
                 elif ask == "51":
@@ -278,11 +304,13 @@ def main():
                 
                 print("________________________________________________________________________________________________")
                 print("________________________________________________________________________________________________")
-                print("What do you want to do ?")
-                print("60 : back\n61 : Create Role\n62 : View All Roles\n")
+                print("\033[1;32mWhat do you want to do ?")
+                print("60 : back          ".center(shutil.get_terminal_size().columns))
+                print("61 : Create Role   ".center(shutil.get_terminal_size().columns))
+                print("62 : View All Roles".center(shutil.get_terminal_size().columns))
+                print("\033[0m________________________________________________________________________________________________")
                 print("________________________________________________________________________________________________")
-                print("________________________________________________________________________________________________")
-                ask = input("")
+                ask = input("\033[0;36m>>> \033[0m")
                 if ask == "60":
                     loop = 1
                 elif ask == "61":
@@ -306,24 +334,6 @@ def main():
                     print("\n"*100)
     
     
-        if ListRaces:
-            saveData(ListRaces)            
-        if  ListPlayer:
-            saveData(ListPlayer)
-        
-        if  ListNPC:
-            saveData(ListNPC)
-        
-        if  ListCreature : 
-            saveData(ListCreature)
-        if ListItem:
-            saveData(ListItem)
-        if ListSkills:
-            saveData(ListSkills)
-        if ListRoles:
-            saveData(ListRoles)
-        if ListBuilding:
-            saveData(ListBuilding)
     return 0
 
 main()
