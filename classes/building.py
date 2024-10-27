@@ -7,6 +7,9 @@ class building:
         self.__architecture = architecture
         self.__owner = owner
 
+    def __str__(self):
+        return f'Name = {self.__name}\nArchitecture = {self.__architecture}\nOwner = {self.__Owner}'
+
     def getName(self):
         return self.__name
     def getArchitecture(self):
