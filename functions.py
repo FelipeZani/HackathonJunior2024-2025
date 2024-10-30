@@ -153,6 +153,32 @@ def createItem():
         i=item(name,weight,stats)
     return i
 
+def triItem(listItem):
+        Helm = []
+        ChestPlats = []
+        Leg = []
+        Boo = []
+        Weapon = []
+        Ring = []
+        Unclassed = []
+
+        for itm in range(len(listItem)):
+            classes = type(listItem[itm])
+            if classes == helmet:
+                Helm.append(listItem[itm])
+            elif classes == chestplate:
+                ChestPlats.append(listItem[itm])
+            elif classes == leggings:
+                Leg.append(listItem[itm])
+            elif classes == boots:
+                Boo.append(listItem[itm])
+            elif classes == ring:
+                Ring.append(listItem[itm])
+            elif classes == weapon:
+                Weapon.append(listItem[itm])
+            else :
+                Unclassed.append(listItem[itm])
+        return [Helm,ChestPlats,Leg,Boo,Ring,Weapon,Unclassed]
 
 def createInventory():
     listInventory = []
