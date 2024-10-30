@@ -9,6 +9,9 @@ class item:
         self.__name = name
         self.__weight = weight
         self.__stats = stats
+        
+    def __str__(self):
+        return f'-Name = {self.__name}\n-Item Weight = {self.__weight}\n-Item Statistics :\n{self.__stats}\n'
 
     def getName(self):
         return self.__name
