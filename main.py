@@ -128,6 +128,8 @@ def main():
                             print("_"*shutil.get_terminal_size().columns)
                             input("Click entry to continue")
                             print("\n"*100)
+                        
+
                 elif ask == "22":
                     loop2 = 0
                     while loop2 == 0:
@@ -259,17 +261,48 @@ def main():
                 elif ask == "42":
                     print("_"*shutil.get_terminal_size().columns)
                     print("_"*shutil.get_terminal_size().columns)
-                    print("This is all your Items :")
-                    print("Items : ")
-                    if len(ListItem)==0:
-                        print("")
-                    else :
-                        for j in range(len(ListItem)):
-                            print(ListItem[j])
+                    
+                    print("\033[0;31mHelmets : \033[0m")
+                    for u in range(len(triItem(ListItem)[0])):
+                        print(triItem(ListItem)[0][u])
+                        print("-------------------------")
+                    print()
+                    print("\033[0;31mChestplates : \033[0m")
+                    for u in range(len(triItem(ListItem)[1])):
+                        print(triItem(ListItem)[1][u])
+                        print("-------------------------")
+                    print()
+                    print("\033[0;31mLeggings : \033[0m")
+                    for u in range(len(triItem(ListItem)[2])):
+                        print(triItem(ListItem)[2][u])
+                        print("-------------------------")
+                    print()
+                    print("\033[0;31mBoots : \033[0m")
+                    for u in range(len(triItem(ListItem)[3])):
+                        print(triItem(ListItem)[3][u])
+                        print("-------------------------")
+                    print()
+                    print("\033[0;31mRings : \033[0m")
+                    for u in range(len(triItem(ListItem)[4])):
+                        print(triItem(ListItem)[4][u])
+                        print("-------------------------")
+                    print()
+                    print("\033[0;31mWeapons : \033[0m")
+                    for u in range(len(triItem(ListItem)[5])):
+                        print(triItem(ListItem)[5][u])
+                        print("-------------------------")
+                    print()
+                    print("\033[0;31mUnclassed : \033[0m")
+                    for u in range(len(triItem(ListItem)[6])):
+                        print(triItem(ListItem)[6][u])
+                        print("-------------------------")
+                    print()
+                    print(triItem(ListItem))
                     print("_"*shutil.get_terminal_size().columns)
                     print("_"*shutil.get_terminal_size().columns)
                     input("Click entry to continue")
                     print("\n"*100)
+
         elif ask == "5":
             loop = 0
             while loop == 0:
